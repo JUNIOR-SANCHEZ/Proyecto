@@ -22,7 +22,7 @@ class menuWidget extends Widget{
     public function getConfigs($menu){
         $menus["sidebar"] = array(
             "position"=>"sidebar",
-            "show"=>array("acl","pruebas","tarjetas","usuarios")
+            "show"=>array("acl","test","tarjetas","usuarios")
 //            "hide"=>array("inicio","login","tarjetas"),
         );
         

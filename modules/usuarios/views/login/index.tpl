@@ -54,7 +54,7 @@
 
 <div class="contenedor-login">
     <img src="{$_layoutParams.root}public/img/User-icon.png" alt="">
-    <form action="{$_layoutParams.root}login" method="POST">
+    <form action="{$_layoutParams.root}usuarios/login" method="POST">
         <input type="hidden" name="enviar" value="1"/>
         <div class="form-inputs">
             <input type="text" id="usuario" class="login-inputs" name="txt_usuario" placeholder="Usuario" value="{if isset($datos)} {$datos.txt_usuario}{/if}">

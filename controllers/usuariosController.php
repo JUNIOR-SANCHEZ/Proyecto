@@ -11,6 +11,7 @@ class usuariosController extends Controller{
     
     public function __construct() {
         parent::__construct();
+        $this->_view->setTemplate("bootstrap");
     }
     public function index() {}
 }

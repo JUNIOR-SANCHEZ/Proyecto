@@ -7,7 +7,7 @@ class registroModel extends Model{
     }
     
     public function checkEmail($email){
-        $result = $this->_db->prepare("SELECT * FROM usuarios WHERE correo_usu = :email;");
+        $result = $this->_db->prepare("SELECT * FROM usuarios WHERE email = :email;");
         $result->bindParam(":email",$email, PDO::PARAM_STR);
         $result->execute();
         if($result->fetch()){
@@ -18,7 +18,7 @@ class registroModel extends Model{
     }
     
     public function checkUser($user){
-        $result = $this->_db->prepare("SELECT * FROM usuarios WHERE nick_usu = :user;");
+        $result = $this->_db->prepare("SELECT * FROM usuarios WHERE usuario = :user;");
         $result->bindParam(":user",$user, PDO::PARAM_STR);
         $result->execute();
         if($result->fetch()){
@@ -28,10 +28,9 @@ class registroModel extends Model{
         return false;
     }
     
-    public function addUser($name,$user,$pass,$email,$imagen){
-        $statement=$this->_db->prepare("INSERT INTO usuarios VALUES (null,:imagen,:name,:user,:pass,:email,'usuario',1,now());");
+    public function addUser($name,$user,$pass,$email){
+        $statement=$this->_db->prepare("INSERT INTO usuarios VALUES (null,:name,:user,:pass,:email,4,1,now(),1963007335);");
         $pass = Cifrado::getHash("sha1", $pass, HASH_KEY);
-        $statement->bindParam(":imagen",$imagen, PDO::PARAM_STR);
         $statement->bindParam(":name",$name, PDO::PARAM_STR);
         $statement->bindParam(":user",$user, PDO::PARAM_STR);
         $statement->bindParam(":pass",$pass , PDO::PARAM_STR);

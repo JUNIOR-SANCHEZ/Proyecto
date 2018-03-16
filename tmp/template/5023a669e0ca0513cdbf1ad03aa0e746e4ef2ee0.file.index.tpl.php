@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-12 01:24:51
+<?php /* Smarty version Smarty-3.1.8, created on 2018-03-12 05:15:53
          compiled from "C:\xampp\htdocs\SanjuanBautista\modules\usuarios\views\registro\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:934889035aa5c8d3397399-66651770%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5023a669e0ca0513cdbf1ad03aa0e746e4ef2ee0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanjuanBautista\\modules\\usuarios\\views\\registro\\index.tpl',
-      1 => 1520814005,
+      1 => 1520828147,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_5aa5c8d34484b1_73420307',
   'variables' => 
   array (
     '_layoutParams' => 0,
     'datos' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5aa5c8d34484b1_73420307',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5aa5c8d34484b1_73420307')) {function content_5aa5c8d34484b1_73420307($_smarty_tpl) {?><style>
     .form-register {
@@ -91,20 +91,20 @@ input {
 
 
 <form method="POST" action="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-registro" id="frmRegistro" class="form-register" enctype="multipart/form-data">
+usuarios/registro" id="frmRegistro" class="form-register" enctype="multipart/form-data">
     <input type="hidden" name="enviar" value="1"/>
     <h2 class="form-titulo">CREAR UNA CUENTA</h2>
     <div class="registra-inputs">
-        <input class="input-100" type="text" name="txt_nombre" id="nombre" placeholder="Nombre" <?php if (isset($_smarty_tpl->tpl_vars['datos']->value['txt_nombre'])){?> value="<?php echo $_smarty_tpl->tpl_vars['datos']->value['txt_nombre'];?>
-" <?php }?>>
-        <input class="input-100" type="text" name="txt_usuario" id="usuario" placeholder="Usuario" <?php if (isset($_smarty_tpl->tpl_vars['datos']->value['txt_usuario'])){?> value=" <?php echo $_smarty_tpl->tpl_vars['datos']->value['txt_usuario'];?>
-" <?php }?>>
-        <input class="input-100" type="text" name="txt_correo" id="correo" placeholder="Correo" <?php if (isset($_smarty_tpl->tpl_vars['datos']->value['txt_correo'])){?> value=" <?php echo $_smarty_tpl->tpl_vars['datos']->value['txt_correo'];?>
-" <?php }?>>
-        <input class="input-100" type="text" name="txt_pass"  id="pass1" placeholder="Contraseña" <?php if (isset($_smarty_tpl->tpl_vars['datos']->value['txt_pass'])){?> value="<?php echo $_smarty_tpl->tpl_vars['datos']->value['txt_pass'];?>
-"<?php }?>>
-        <input class="input-100" type="text" name="txt_passConfirmar" id="pass1" placeholder="Confirmar Contraseña" <?php if (isset($_smarty_tpl->tpl_vars['datos']->value['txt_passConfirmar'])){?> value=" <?php echo $_smarty_tpl->tpl_vars['datos']->value['txt_passConfirmar'];?>
-" <?php }?>>
+        <input class="input-100" type="text" name="txt_nombre" id="nombre" placeholder="Nombre"  value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['txt_nombre'])===null||$tmp==='' ? '' : $tmp);?>
+">
+        <input class="input-100" type="text" name="txt_usuario" id="usuario" placeholder="Usuario" value=" <?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['txt_usuario'])===null||$tmp==='' ? '' : $tmp);?>
+">
+        <input class="input-100" type="text" name="txt_correo" id="correo" placeholder="Correo"  value=" <?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['txt_correo'])===null||$tmp==='' ? '' : $tmp);?>
+" >
+        <input class="input-100" type="text" name="txt_pass"  id="pass1" placeholder="Contraseña" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['txt_pass'])===null||$tmp==='' ? '' : $tmp);?>
+">
+        <input class="input-100" type="text" name="txt_passConfirmar" id="pass1" placeholder="Confirmar Contraseña"  value=" <?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['txt_passConfirmar'])===null||$tmp==='' ? '' : $tmp);?>
+" >
         <input class="input-100" type="file" name="imagen" id="pass1" placeholder="Confirmar Contraseña" />
         <input type="submit" value="Registrar" class="btn-enviar" />
 
