@@ -124,5 +124,10 @@ abstract class Controller {
         }
         return true;
     }
+    
+    protected function getRutaCarpetaImagen($ruta){
+        $ruta = ROOT."public".DS."img".DS.$ruta.DS;
+        return $ruta;
+    }
 
 }

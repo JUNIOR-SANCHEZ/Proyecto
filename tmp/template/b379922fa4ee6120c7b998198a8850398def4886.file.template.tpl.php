@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-12 04:30:36
+<?php /* Smarty version Smarty-3.1.8, created on 2018-03-21 05:03:23
          compiled from "C:\xampp\htdocs\SanjuanBautista\views\layout\bootstrap\template.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:12699447045aa5e2634e3fa3-35377184%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b379922fa4ee6120c7b998198a8850398def4886' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanjuanBautista\\views\\layout\\bootstrap\\template.tpl',
-      1 => 1520825436,
+      1 => 1521605002,
       2 => 'file',
     ),
   ),
@@ -19,10 +19,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_5aa5e2634e6349_49944422',
   'variables' => 
   array (
+    '_layoutParams' => 0,
     'widgets' => 0,
     'tp' => 0,
     '_contenido' => 0,
     'sr' => 0,
+    'js' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -33,14 +35,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_css'];?>
+bootstrap.css" />
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+    
+
 </head>
 <body>
     <?php if (isset($_smarty_tpl->tpl_vars['widgets']->value['top_default'])){?>
@@ -75,7 +76,21 @@ $_smarty_tpl->tpl_vars['sr']->_loop = true;
         </div>
     </div>
     
+    <script type="text/javascript">
+        var _root_ = '<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
+';
+    </script>
     
+    <?php if (isset($_smarty_tpl->tpl_vars['_layoutParams']->value['js'])&&count($_smarty_tpl->tpl_vars['_layoutParams']->value['js'])){?>
+    <?php  $_smarty_tpl->tpl_vars['js'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['js']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['_layoutParams']->value['js']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['js']->key => $_smarty_tpl->tpl_vars['js']->value){
+$_smarty_tpl->tpl_vars['js']->_loop = true;
+?>
+        <script src="<?php echo $_smarty_tpl->tpl_vars['js']->value;?>
+" type="text/javascript"></script>
+    <?php } ?>
+    <?php }?>
     
 </body>
 </html>

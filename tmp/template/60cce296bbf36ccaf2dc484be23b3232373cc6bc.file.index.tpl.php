@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-12 01:24:44
+<?php /* Smarty version Smarty-3.1.8, created on 2018-03-23 06:29:00
          compiled from "C:\xampp\htdocs\SanjuanBautista\views\fundacion\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:5247256625aa5c8cc62a357-07815816%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '60cce296bbf36ccaf2dc484be23b3232373cc6bc' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanjuanBautista\\views\\fundacion\\index.tpl',
-      1 => 1520814018,
+      1 => 1521782940,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_5aa5c8cc6c2e33_49178028',
   'variables' => 
   array (
     '_layoutParams' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5aa5c8cc6c2e33_49178028',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5aa5c8cc6c2e33_49178028')) {function content_5aa5c8cc6c2e33_49178028($_smarty_tpl) {?><main>
     <div class="contenedor5">
@@ -29,8 +29,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <h4>PRESIDENTA</h4>
         <p>lcda.Ileana Jessica Serrano Fadul</p><br>
 
-        <center><img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-public/img/presidenta.jpg" alt="" width="500" height="500"></center>
+        <center><img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_img'];?>
+presidenta.jpg" alt="" width="500" height="500"></center>
 
       </div>
     </div>

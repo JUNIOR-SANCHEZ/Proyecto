@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-12 05:15:53
+<?php /* Smarty version Smarty-3.1.8, created on 2018-03-24 01:25:42
          compiled from "C:\xampp\htdocs\SanjuanBautista\modules\usuarios\views\registro\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:934889035aa5c8d3397399-66651770%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5023a669e0ca0513cdbf1ad03aa0e746e4ef2ee0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanjuanBautista\\modules\\usuarios\\views\\registro\\index.tpl',
-      1 => 1520828147,
+      1 => 1521849046,
       2 => 'file',
     ),
   ),
@@ -97,13 +97,13 @@ usuarios/registro" id="frmRegistro" class="form-register" enctype="multipart/for
     <div class="registra-inputs">
         <input class="input-100" type="text" name="txt_nombre" id="nombre" placeholder="Nombre"  value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['txt_nombre'])===null||$tmp==='' ? '' : $tmp);?>
 ">
-        <input class="input-100" type="text" name="txt_usuario" id="usuario" placeholder="Usuario" value=" <?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['txt_usuario'])===null||$tmp==='' ? '' : $tmp);?>
+        <input class="input-100" type="text" name="txt_usuario" id="usuario" placeholder="Usuario" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['txt_usuario'])===null||$tmp==='' ? '' : $tmp);?>
 ">
-        <input class="input-100" type="text" name="txt_correo" id="correo" placeholder="Correo"  value=" <?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['txt_correo'])===null||$tmp==='' ? '' : $tmp);?>
+        <input class="input-100" type="text" name="txt_correo" id="correo" placeholder="Correo"  value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['txt_correo'])===null||$tmp==='' ? '' : $tmp);?>
 " >
-        <input class="input-100" type="text" name="txt_pass"  id="pass1" placeholder="Contraseña" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['txt_pass'])===null||$tmp==='' ? '' : $tmp);?>
+        <input class="input-100" type="password" name="txt_pass"  id="pass1" placeholder="Contraseña" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['txt_pass'])===null||$tmp==='' ? '' : $tmp);?>
 ">
-        <input class="input-100" type="text" name="txt_passConfirmar" id="pass1" placeholder="Confirmar Contraseña"  value=" <?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['txt_passConfirmar'])===null||$tmp==='' ? '' : $tmp);?>
+        <input class="input-100" type="password" name="txt_passConfirmar" id="pass1" placeholder="Confirmar Contraseña"  value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['txt_passConfirmar'])===null||$tmp==='' ? '' : $tmp);?>
 " >
         <input class="input-100" type="file" name="imagen" id="pass1" placeholder="Confirmar Contraseña" />
         <input type="submit" value="Registrar" class="btn-enviar" />

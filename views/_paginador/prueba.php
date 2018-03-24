@@ -1,24 +1,24 @@
 <?php if(isset($this->_paginacion)): ?>
 
-<div class="pagination" style="text-align: center;">
-    <ul class="pagination">
+<div id="pagination" style="text-align: center;">
+    
         <?php if($this->_paginacion['primero']): ?>
 
-            <li><a href="<?php echo $link . $this->_paginacion['primero']; ?>">&Lt;</a></li>
+    <a class="pagination" href="<?php echo $link . $this->_paginacion['primero']; ?>">&Lt;</a>
 
         <?php else: ?>
 
-            <li class="disabled"><span>&Lt;</span></li>
+            <span>&Lt;</span>
 
         <?php endif; ?>
 
         <?php if($this->_paginacion['anterior']): ?>
 
-            <li><a href="<?php echo $link . $this->_paginacion['anterior']; ?>">&lt;</a></li>
+          <a href="<?php echo $link . $this->_paginacion['anterior']; ?>">&lt;</a>
 
         <?php else: ?>
 
-            <li class="disabled"><span>&lt;</span></li>
+            <span>&lt;</span>
 
         <?php endif; ?>
 
@@ -26,15 +26,15 @@
 
             <?php if($this->_paginacion['actual'] == $this->_paginacion['rango'][$i]): ?>
 
-                <li class="active"><span><?php echo $this->_paginacion['rango'][$i]; ?></span></li>
+            <span class="current"><?php echo $this->_paginacion['rango'][$i]; ?></span>
 
             <?php else: ?>
 
-                <li>
+               
                     <a href="<?php echo $link . $this->_paginacion['rango'][$i]; ?>">
                         <?php echo $this->_paginacion['rango'][$i]; ?>
                     </a>
-                </li>
+          
 
             <?php endif; ?>
 
@@ -42,24 +42,24 @@
 
         <?php if($this->_paginacion['siguiente']): ?>
 
-            <li><a href="<?php echo $link . $this->_paginacion['siguiente']; ?>">&gt;</a></li>
+            <a href="<?php echo $link . $this->_paginacion['siguiente']; ?>">&gt;</a>
 
         <?php else: ?>
 
-            <li class="disabled"><span>&gt;</span></li>
+            <span>&gt;</span>
 
         <?php endif; ?>
 
         <?php if($this->_paginacion['ultimo']): ?>
 
-            <li><a href="<?php echo $link . $this->_paginacion['ultimo']; ?>">&Gt;</a></li>
+            <a href="<?php echo $link . $this->_paginacion['ultimo']; ?>">&Gt;</a>
 
         <?php else: ?>
 
-            <li class="disabled"><span>&Gt;</span></li>
+            <span>&Gt;</span>
 
         <?php endif; ?>
-    </ul>
+    
 </div>
 
 <?php endif; ?>

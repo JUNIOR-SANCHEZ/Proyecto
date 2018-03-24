@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-12 01:21:43
+<?php /* Smarty version Smarty-3.1.8, created on 2018-03-23 04:51:29
          compiled from "C:\xampp\htdocs\SanjuanBautista\views\index\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11368542965aa5c817cbec34-95868311%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '36616a6f5041205513498b9be543d621df3b4452' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanjuanBautista\\views\\index\\index.tpl',
-      1 => 1520814019,
+      1 => 1521777089,
       2 => 'file',
     ),
   ),
@@ -15,27 +15,27 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_5aa5c817cd9ea2_01409290',
   'variables' => 
   array (
     '_layoutParams' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5aa5c817cd9ea2_01409290',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5aa5c817cd9ea2_01409290')) {function content_5aa5c817cd9ea2_01409290($_smarty_tpl) {?>
 <div class="container-portada">
     <div class="container-details">
         <div class="details">
-            <img class="animated flip infinite" src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-public/img/logo2.png" alt="">
+            <img class="animated flip infinite" src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_img'];?>
+logo2.png" alt="">
             <br>
 
         </div>
         <div class="details">
             <br>
-            <img class="animated slideInLeft" id="img2" src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-public/img/texto1.png" alt="">
+            <img class="animated slideInLeft" id="img2" src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_img'];?>
+texto1.png" alt="">
         </div>
 
 
@@ -75,8 +75,8 @@ public/img/texto1.png" alt="">
         <div class="contenedor4-item">
             <h4>¿QUIENES SOMOS?</h4>
             <p>La Fundación de Desarrollo Social “SAN JUAN BAUTISTA” es una organización social sin fines de lucro cuyo objetivo principal es, ejecutar proyectos integrales de desarrollo social en beneficio de los sectores más vulnerables y de manera especial de los Grupos de Atención Prioritaria, garantizando el mejoramiento de los niveles de vida de la sociedad y el pleno goce de sus derechos fundamentales.</p>
-            <img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-public/img/banner.jpg" alt="">
+            <img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_img'];?>
+banner.jpg" alt="">
         </div>
     </div>
     <div class="contenedor2">
@@ -85,8 +85,8 @@ public/img/banner.jpg" alt="">
                 <center>
                     <div class="ih-item circle colored effect2 left_to_right">
                         <a href="#">
-                            <div class="img"><img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-public/img/huella.png" alt="img"></div>
+                            <div class="img"><img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_img'];?>
+huella.png" alt="img"></div>
                             <div class="info">
                                 <h3>Marca la diferencia</h3>
                             </div>
@@ -103,8 +103,8 @@ public/img/huella.png" alt="img"></div>
                     <div class="ih-item circle effect1">
                         <a href="#">
                             <div class="spinner"></div>
-                            <div class="img"><img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-public/img/voluntario.png" alt=""></div>
+                            <div class="img"><img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_img'];?>
+voluntario.png" alt=""></div>
                             <div class="info">
                                 <div class="info-back">
                                     <h3>Marca la diferencia</h3>
@@ -122,8 +122,8 @@ public/img/voluntario.png" alt=""></div>
                     <div class="ih-item circle effect1">
                         <a href="#">
                             <div class="spinner"></div>
-                            <div class="img"><img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-public/img/donacion.png" alt=""></div>
+                            <div class="img"><img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_img'];?>
+donacion.png" alt=""></div>
                             <div class="info">
                                 <div class="info-back">
                                     <h3>Marca la diferencia</h3>
@@ -141,12 +141,12 @@ public/img/donacion.png" alt=""></div>
     <div class="contenedor3">
         <div class="contenedor-trabajos">
             <h3>ÚLTIMOS TRABAJOS</h3>
-            <img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-public/img/work1.jpg">
-            <img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-public/img/work2.jpg">
-            <img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-public/img/work3.jpg">
+            <img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_img'];?>
+work1.jpg">
+            <img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_img'];?>
+work2.jpg">
+            <img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_img'];?>
+work3.jpg">
         </div>
     </div>
 

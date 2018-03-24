@@ -8,19 +8,20 @@ class indexController extends usuariosController
     {
         parent::__construct();
         $this->_usuarios = $this->loadModel('index');
-//        if(!$this->_acl->permiso("admin_access")){
-//            $this->redireccionar();
-//        }
+        if(!$this->_acl->permiso("admin_access")){
+            $this->redireccionar();
+        }
     }
     
     public function index()
     {
-//        if(!$this->_acl->permiso("admin_access")){
-//            $this->redireccionar();
-//        }
+        $dato = "";
+        if(isset($_POST["share"])){
+            $dato=$_POST["share"];
+        }
         $this->_view->setJs(array('prueba'));
         $this->_view->assign('titulo', 'Usuarios');
-        $this->_view->assign('usuarios', $this->_usuarios->getUsuarios());
+        $this->_view->assign('usuarios', $this->_usuarios->getUsuarios($dato));
         $this->_view->renderizar('index', 'usuarios');
     }
     
@@ -92,6 +93,16 @@ class indexController extends usuariosController
         $this->_view->assign('info', $this->_usuarios->getUsuario($id));
         
         $this->_view->renderizar('permisos', 'usuarios');
+    }
+    public function eliminarUsuario($id){
+        $id = Cifrado::decryption($id);
+        $id = (int)$id;
+        if(!is_int($id)){
+            $this->redireccionar();
+        }
+        $this->_usuarios->eliminarUsuario($id);
+        $this->redireccionar("usuarios");
+        
     }
 }
 

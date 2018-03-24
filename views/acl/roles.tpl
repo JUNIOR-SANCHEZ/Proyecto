@@ -1,4 +1,3 @@
-<div class="container">
 <h2>Administraci&oacute;n de roles</h2>
 
 {if isset($roles) && count($roles)}
@@ -24,4 +23,3 @@
 {/if}
 
 <p><a class="btn btn-primary" href="{$_layoutParams.root}acl/nuevo_role"><i class="icon-plus-sign icon-white"> </i> Agregar Role</a></p>
-</div>

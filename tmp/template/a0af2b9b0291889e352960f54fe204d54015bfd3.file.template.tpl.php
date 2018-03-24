@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-12 01:21:43
+<?php /* Smarty version Smarty-3.1.8, created on 2018-03-24 05:46:17
          compiled from "C:\xampp\htdocs\SanjuanBautista\views\layout\default\template.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:8650792635aa5c817694651-49919089%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a0af2b9b0291889e352960f54fe204d54015bfd3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanjuanBautista\\views\\layout\\default\\template.tpl',
-      1 => 1520814019,
+      1 => 1521866775,
       2 => 'file',
     ),
   ),
@@ -15,20 +15,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_5aa5c8177d8317_61243912',
   'variables' => 
   array (
     'titulo' => 0,
     '_layoutParams' => 0,
     'widgets' => 0,
     'tp' => 0,
-    'error' => 0,
-    'mensaje' => 0,
+    '_error' => 0,
+    '_mensaje' => 0,
     '_contenido' => 0,
     'js' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5aa5c8177d8317_61243912',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5aa5c8177d8317_61243912')) {function content_5aa5c8177d8317_61243912($_smarty_tpl) {?><html>
     <head>
@@ -38,20 +38,27 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-public/css/miestilo.css">
-        <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-public/css/mdb.css">
-        <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-public/iconos/css/fontello.css">
-        <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-public/css/ihover.css">
+public/css/bootstrap.css" />
+        <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_css'];?>
+mdb.css">
+        <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_css'];?>
+miestilo.css">
+        <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_css'];?>
+theme/style.css" />
+        
+        <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_css'];?>
+iconos/css/fontello.css">
+        <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_css'];?>
+ihover.css">
         <!--------------------------------------------------------------------------------->
-        <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-public/css/grupo_trabajo.css">
+        <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_css'];?>
+grupo_trabajo.css">
         <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
 public/alertify.js-0.3.11/themes/alertify.core.css">
         <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
 public/alertify.js-0.3.11/themes/alertify.default.css">
+        
+        
     </head>
 
     <body>
@@ -78,14 +85,25 @@ $_smarty_tpl->tpl_vars['tp']->_loop = true;
             </div>
         </header>
 
-        <?php if (isset($_smarty_tpl->tpl_vars['error']->value)){?><div id="error"> <?php echo $_smarty_tpl->tpl_vars['error']->value;?>
+        <?php if (isset($_smarty_tpl->tpl_vars['_error']->value)){?><div class="alert alert-success text-center"> <?php echo $_smarty_tpl->tpl_vars['_error']->value;?>
  </div> <?php }?>
-        <?php if (isset($_smarty_tpl->tpl_vars['mensaje']->value)){?><div id="mensaje"> <?php echo $_smarty_tpl->tpl_vars['mensaje']->value;?>
+        <?php if (isset($_smarty_tpl->tpl_vars['_mensaje']->value)){?><div class="alert alert-success text-center"> <?php echo $_smarty_tpl->tpl_vars['_mensaje']->value;?>
  </div> <?php }?>
         
         <?php echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['_contenido']->value, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
         
+
+<script src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
+public/js/jquery.js"></script>
+
+<script src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_js'];?>
+miscript.js"></script>
+        
+<script type="text/javascript">
+        var _root_ = '<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
+';
+</script>        
         
 
 <?php if (isset($_smarty_tpl->tpl_vars['_layoutParams']->value['js'])&&count($_smarty_tpl->tpl_vars['_layoutParams']->value['js'])){?>
@@ -98,6 +116,8 @@ $_smarty_tpl->tpl_vars['js']->_loop = true;
 " type="text/javascript"></script>
     <?php } ?>
 <?php }?>
+
+
 
         
         <?php if (isset($_smarty_tpl->tpl_vars['widgets']->value['footer'])){?>
@@ -112,6 +132,7 @@ $_smarty_tpl->tpl_vars['tp']->_loop = true;
          <?php } ?>
         
         <?php }?>
+        
 
 </body>
 </html>

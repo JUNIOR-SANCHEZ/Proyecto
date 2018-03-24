@@ -57,17 +57,11 @@ class menuModelWidget extends Model{
                 'class'=>'icon-target',
                 'enlace' => BASE_URL."contactos"
             ),
-            array(
-                'id' => 'ver',
-                'titulo' => 'Ver',
-                'class'=>'icon-target',
-                'enlace' => BASE_URL
-            ),
            array(
                 'id' => 'noticias',
                 'titulo' => 'Noticias',
                 'class'=>'icon-target',
-                'enlace' => BASE_URL
+                'enlace' => BASE_URL.'blog'
             )
            
         );
@@ -87,12 +81,24 @@ class menuModelWidget extends Model{
                 'class'=>'icon-addres',
                 'enlace' => BASE_URL . 'usuarios/login/cerrar'
             );
+            $menus["top"][] = array(
+                'id' => 'perfil',
+                'titulo' => 'Perfil',
+                'class'=>'icon-target',
+                'enlace' => BASE_URL.'usuarios/registro/perfil'
+            );
         } else {
             $menus["top"][] = array(
                 'id' => 'login',
                 'titulo' => 'Iniciar Session',
                 'class'=>'icon-addres',
                 'enlace' => BASE_URL . 'usuarios/login'
+            );
+            $menus["top"][] = array(
+                'id' => 'registro',
+                'titulo' => 'Registrarse',
+                'class'=>'icon-addres',
+                'enlace' => BASE_URL . 'usuarios/registro'
             );
         }
         

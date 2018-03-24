@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-12 05:27:52
+<?php /* Smarty version Smarty-3.1.8, created on 2018-03-23 20:19:47
          compiled from "C:\xampp\htdocs\SanjuanBautista\modules\usuarios\views\login\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9145867245aa5c8cdb82c81-12114521%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ac3e0df8e646fd36a109eec2a42c032485fc1895' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanjuanBautista\\modules\\usuarios\\views\\login\\index.tpl',
-      1 => 1520828866,
+      1 => 1521832787,
       2 => 'file',
     ),
   ),
@@ -79,8 +79,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </style>
 
 <div class="contenedor-login">
-    <img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-public/img/User-icon.png" alt="">
+    <img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_img'];?>
+User-icon.png" alt="">
     <form action="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
 usuarios/login" method="POST">
         <input type="hidden" name="enviar" value="1"/>

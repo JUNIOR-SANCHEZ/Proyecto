@@ -4,7 +4,7 @@
         <h4>PRESIDENTA</h4>
         <p>lcda.Ileana Jessica Serrano Fadul</p><br>
 
-        <center><img src="{$_layoutParams.root}public/img/presidenta.jpg" alt="" width="500" height="500"></center>
+        <center><img src="{$_layoutParams.ruta_img}presidenta.jpg" alt="" width="500" height="500"></center>
 
       </div>
     </div>

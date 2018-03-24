@@ -7,13 +7,18 @@ class indexModel extends Model
         parent::__construct();
     }
     
-    public function getUsuarios()
+    public function getUsuarios($dato)
     {
-        $usuarios = $this->_db->query(
+        $usuarios = $this->_db->prepare(
                 "select u.*,r.role from usuarios u, roles r ".
-                "where u.role = r.id_role"
+                "where u.role = r.id_role "
+                . " AND u.nombre Like :nombre;"
                 );
-        return $usuarios->fetchAll(PDO::FETCH_ASSOC);
+         $usuarios->execute(array(
+            ":nombre"=>"%$dato%"
+        ));
+        $resp = $usuarios->fetchAll(PDO::FETCH_ASSOC);
+        return $resp;
     }
     
     public function getUsuario($usuarioID)
@@ -51,6 +56,9 @@ class indexModel extends Model
                 "replace into permisos_usuario set ".
                 "usuario = $usuarioID , permiso = $permisoID, valor ='$valor'"
                 );
+    }
+    public function eliminarUsuario($id){
+        $this->_db->query("DELETE FROM usuarios WHERE id = $id;");
     }
 }
 

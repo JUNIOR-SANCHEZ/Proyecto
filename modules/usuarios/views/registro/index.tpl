@@ -69,10 +69,10 @@ input {
     <h2 class="form-titulo">CREAR UNA CUENTA</h2>
     <div class="registra-inputs">
         <input class="input-100" type="text" name="txt_nombre" id="nombre" placeholder="Nombre"  value="{$datos.txt_nombre|default:""}">
-        <input class="input-100" type="text" name="txt_usuario" id="usuario" placeholder="Usuario" value=" {$datos.txt_usuario|default:""}">
-        <input class="input-100" type="text" name="txt_correo" id="correo" placeholder="Correo"  value=" {$datos.txt_correo|default:""}" >
-        <input class="input-100" type="text" name="txt_pass"  id="pass1" placeholder="Contraseña" value="{$datos.txt_pass|default:""}">
-        <input class="input-100" type="text" name="txt_passConfirmar" id="pass1" placeholder="Confirmar Contraseña"  value=" {$datos.txt_passConfirmar|default:""}" >
+        <input class="input-100" type="text" name="txt_usuario" id="usuario" placeholder="Usuario" value="{$datos.txt_usuario|default:""}">
+        <input class="input-100" type="text" name="txt_correo" id="correo" placeholder="Correo"  value="{$datos.txt_correo|default:""}" >
+        <input class="input-100" type="password" name="txt_pass"  id="pass1" placeholder="Contraseña" value="{$datos.txt_pass|default:""}">
+        <input class="input-100" type="password" name="txt_passConfirmar" id="pass1" placeholder="Confirmar Contraseña"  value="{$datos.txt_passConfirmar|default:""}" >
         <input class="input-100" type="file" name="imagen" id="pass1" placeholder="Confirmar Contraseña" />
         <input type="submit" value="Registrar" class="btn-enviar" />
 

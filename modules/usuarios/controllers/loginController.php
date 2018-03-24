@@ -14,12 +14,12 @@ class loginController extends Controller {
         if ($this->getInt('enviar') == 1) {
             $this->_view->assign("datos",$_POST);
             if(!$this->getAlphaNum('txt_usuario')){
-                 $this->_view->assign("error","Escriba el nombre de usuario");
+                 $this->_view->assign("_error","Escriba el nombre de usuario");
                 $this->_view->renderizar('index', 'login');
                 exit;
             }
             if(!$this->getSql('txt_pass')){
-                 $this->_view->assign("error","Escriba una contraseña");
+                 $this->_view->assign("_error","Escriba una contraseña");
                  $this->_view->renderizar('index', 'login');
                 exit;
             }
@@ -29,15 +29,15 @@ class loginController extends Controller {
                     );
             
             if(!$row){
-                $this->_view->assign("error","Usuario y/o contraseña incorrecta");
+                $this->_view->assign("_error","Usuario y/o contraseña incorrecta");
                  $this->_view->renderizar('index', 'login');
                 exit;
             }
             $this->_view->datos="Session";
             Session::set('autenticado', true);
             Session::set('level', $row['role']);
-            Session::set("id", $row["id_usu"]);
-            Session::set('usuario', $row['nombre_usu']);
+            Session::set("id", $row["id"]);
+            Session::set('usuario', $row['usuario']);
             Session::set('tiempo', time());
             
             $this->redireccionar();

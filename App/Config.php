@@ -8,6 +8,9 @@ define('APP_NAME', 'San Juan Bautista');
 define('APP_SLOGAN', '..........');
 define('APP_COMPANY', 'www.SanJuanBautista.com');
 define('HASH_KEY', '5a7e9b2d3cbf6');
+define('METHOD', 'AES-256-CBC');
+define('SECRET_KEY', '3cb');
+define('SECRET_IV', '507');
 
 define('DB_HOST','localhost');
 define('DB_USER','root');

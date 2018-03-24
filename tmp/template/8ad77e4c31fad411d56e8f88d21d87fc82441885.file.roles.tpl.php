@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-12 03:10:35
+<?php /* Smarty version Smarty-3.1.8, created on 2018-03-17 02:25:22
          compiled from "C:\xampp\htdocs\SanjuanBautista\views\acl\roles.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:4299522385aa5e19b4f75a7-01554358%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8ad77e4c31fad411d56e8f88d21d87fc82441885' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanjuanBautista\\views\\acl\\roles.tpl',
-      1 => 1520820568,
+      1 => 1521249921,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_5aa5e19b5a4b56_06958743',
   'variables' => 
   array (
     'roles' => 0,
@@ -22,11 +24,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '_layoutParams' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5aa5e19b5a4b56_06958743',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5aa5e19b5a4b56_06958743')) {function content_5aa5e19b5a4b56_06958743($_smarty_tpl) {?><div class="container">
-<h2>Administraci&oacute;n de roles</h2>
+<?php if ($_valid && !is_callable('content_5aa5e19b5a4b56_06958743')) {function content_5aa5e19b5a4b56_06958743($_smarty_tpl) {?><h2>Administraci&oacute;n de roles</h2>
 
 <?php if (isset($_smarty_tpl->tpl_vars['roles']->value)&&count($_smarty_tpl->tpl_vars['roles']->value)){?>
     <table class="table table-bordered table-condensed table-striped">
@@ -59,5 +58,4 @@ acl/permisos_role/<?php echo $_smarty_tpl->tpl_vars['rl']->value['id_role'];?>
 <?php }?>
 
 <p><a class="btn btn-primary" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-acl/nuevo_role"><i class="icon-plus-sign icon-white"> </i> Agregar Role</a></p>
-</div><?php }} ?>
+acl/nuevo_role"><i class="icon-plus-sign icon-white"> </i> Agregar Role</a></p><?php }} ?>

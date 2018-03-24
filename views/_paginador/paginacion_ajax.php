@@ -1,7 +1,7 @@
 <?php if(isset($this->_paginacion)): ?>
 
 <div class="pagination" style="text-align: center;">
-    <ul class="pagination">
+    <ul class="pagination"> 
         <?php if($this->_paginacion['primero']): ?>
 
             <li><a class="pagina" pagina="<?php echo $this->_paginacion['primero']; ?>" href="javascript:void(0);">&Lt;</a></li>
@@ -60,23 +60,6 @@
 
         <?php endif; ?>
     </ul>
-</div>
-
-<div style="text-align: center">
-    <p>
-        <small>
-            Pagina <?php echo $this->_paginacion['actual']; ?> de <?php echo $this->_paginacion['total']; ?>
-            
-            <br>
-            
-            Registros por pagina: 
-            <select id="registros" class="span1">
-                <?php for($i = 10; $i <= 100; $i += 10): ?>
-                    <option value="<?php echo $i; ?>" <?php if($i == $this->_paginacion['limite']){ echo 'selected="selected"'; } ?>  ><?php echo $i; ?></option>
-                <?php endfor;?>
-            </select>
-        </small>
-    </p>
 </div>
 
 <?php endif; ?>

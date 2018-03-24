@@ -53,7 +53,7 @@
 </style>
 
 <div class="contenedor-login">
-    <img src="{$_layoutParams.root}public/img/User-icon.png" alt="">
+    <img src="{$_layoutParams.ruta_img}User-icon.png" alt="">
     <form action="{$_layoutParams.root}usuarios/login" method="POST">
         <input type="hidden" name="enviar" value="1"/>
         <div class="form-inputs">
