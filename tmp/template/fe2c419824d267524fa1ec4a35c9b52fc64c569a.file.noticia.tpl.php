@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-24 17:13:10
+<?php /* Smarty version Smarty-3.1.8, created on 2018-03-24 19:53:10
          compiled from "C:\xampp\htdocs\SanjuanBautista\views\blog\noticia.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3949656135ab04edc174402-64866786%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fe2c419824d267524fa1ec4a35c9b52fc64c569a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanjuanBautista\\views\\blog\\noticia.tpl',
-      1 => 1521907990,
+      1 => 1521917589,
       2 => 'file',
     ),
   ),
@@ -122,7 +122,7 @@ public/img/noticia/thumb/thumb_<?php echo $_smarty_tpl->tpl_vars['dt']->value['i
                         <input type="hidden" value="1" name="guardar"/>
                         <input type="hidden" value="<?php echo Cifrado::encryption($_smarty_tpl->tpl_vars['noticia']->value['id']);?>
 " name="noticiaId"/>
-                        <textarea class="form-control counted" name="message" placeholder="Digite uma mensagem" rows="5" style="margin-bottom:10px;"></textarea>
+                        <textarea id="textareaComentario" class="form-control counted" name="message" placeholder="Digite uma mensage" rows="5" style="margin-bottom:10px;"></textarea>
                         <h6 class="pull-right" id="counter">320 characters remaining</h6>
                         <button id="addComentario" class="btn btn-info" type="submit">Comentar</button>
                     </form>
@@ -131,9 +131,7 @@ public/img/noticia/thumb/thumb_<?php echo $_smarty_tpl->tpl_vars['dt']->value['i
         </div>
     </div>   
 </div>
-                        <div id="ejemplo">
-                            
-                        </div>                        
+                                               
                         
 <?php }?>
 <!--    ======================================================================= 
@@ -145,31 +143,40 @@ public/img/noticia/thumb/thumb_<?php echo $_smarty_tpl->tpl_vars['dt']->value['i
             <div class="panel panel-info">
               <div class="panel-heading">COMENTARIOS</div>
               <div class="panel-body">
-            <ul class="media-list">
-                <?php  $_smarty_tpl->tpl_vars['cmt'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cmt']->_loop = false;
+                  <ul id="comentarioTexto" class="media-list">
+                        <?php  $_smarty_tpl->tpl_vars['cmt'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cmt']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['comentarios']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['cmt']->key => $_smarty_tpl->tpl_vars['cmt']->value){
 $_smarty_tpl->tpl_vars['cmt']->_loop = true;
 ?>
-                <li class="media">
-                  <div class="media-left">
-                    <a href="#">
-                        <img class="media-object img-circle" width="60" height="60" src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
+                        <li class="media">
+                          <div class="media-left">
+                            <a href="#">
+                                <img class="media-object img-circle" width="60" height="60" src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
 public/img/user/thumb/thumb_<?php echo $_smarty_tpl->tpl_vars['cmt']->value['imagen'];?>
 " alt="...">
-                    </a>
-                  </div>
-                  <div class="media-body">
-                      <h4 class="media-heading"><?php echo $_smarty_tpl->tpl_vars['cmt']->value['nick'];?>
- <?php if (Session::get("id")==$_smarty_tpl->tpl_vars['cmt']->value['usuario']){?> <a class="pull-right"><i class="glyphicon glyphicon-trash"></i></a> <?php }?></h4>
-                    <?php echo $_smarty_tpl->tpl_vars['cmt']->value['comentario'];?>
+                            </a>
+                          </div>
+                          <div class="media-body">
+                              <h4 class="media-heading">
+                                  <?php echo $_smarty_tpl->tpl_vars['cmt']->value['nick'];?>
  
-                    
-                  </div>
-                </li>
-                <?php } ?>
-              </ul>  
+                                  <?php if (Session::get("id")==$_smarty_tpl->tpl_vars['cmt']->value['usuario']){?> 
+                                      <a class="eliminarComentario pull-right" attr-noticiaId="<?php echo Cifrado::encryption($_smarty_tpl->tpl_vars['cmt']->value['noticia']);?>
+" attr-comentarioId="<?php echo Cifrado::encryption($_smarty_tpl->tpl_vars['cmt']->value['id']);?>
+">
+                                          <i class="glyphicon glyphicon-trash"></i>
+                                      </a> 
+                                  <?php }?>
+                              </h4>
+                            <?php echo $_smarty_tpl->tpl_vars['cmt']->value['comentario'];?>
+ 
+                          </div>
+                        </li>
+                        <?php } ?>
+                      </ul>  
+                </div>
+            </div>
         </div>
     </div>
-    
-</div>        <?php }} ?>
+</div><?php }} ?>

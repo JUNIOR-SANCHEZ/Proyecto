@@ -50,11 +50,10 @@ class blogModel extends Model{
     }
     
     public function getComentarios($id){
-        $stmt = $this->_db->prepare("SELECT t1.*,t2.nombre,t2.imagen,t2.usuario AS nick FROM comentarios t1 INNER JOIN usuarios t2 ON t1.usuario = t2.id WHERE reply = 0 AND noticia = 5 ORDER BY id DESC;");
+        $stmt = $this->_db->prepare("SELECT t1.*,t2.nombre,t2.imagen,t2.usuario AS nick FROM comentarios t1 INNER JOIN usuarios t2 ON t1.usuario = t2.id WHERE reply = 0 AND noticia = :id ORDER BY id DESC;");
         $stmt->bindParam(":id",$id, PDO::PARAM_INT);
         $stmt->execute();
         $resp = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//        print_r($resp);exit;
         return $resp;
     }
     

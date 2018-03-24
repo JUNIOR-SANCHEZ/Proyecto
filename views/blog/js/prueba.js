@@ -24,10 +24,31 @@ $(document).on('ready', function(){
             url: url,
             data: $("#formComentario").serialize(),
             success: function($data){
-                $("#ejemplo").html($data);
+                $("#textareaComentario").val('');
+                $("#comentarioTexto").html('');
+                $("#comentarioTexto").html($data);
             }
         });
+        
         return false;
+        
+    });
+    
+    $(".eliminarComentario").live('click',function(){
+        var url = _root_+'blog/eliminarComentario/';
+        var noticiaId = $(this).attr("attr-noticiaId");
+        var comentarioId = $(this).attr("attr-comentarioId");
+        
+        $.ajax({
+            type:"POST",
+            url: url,
+            data: { noticiaId: noticiaId, comentarioId: comentarioId },
+            success: function($data){
+                $("#textareaComentario").val('');
+                $("#comentarioTexto").html('');
+                $("#comentarioTexto").html($data);
+            }
+        });
     });
     
 });

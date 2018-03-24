@@ -71,7 +71,7 @@
                     <form id="formComentario" accept-charset="UTF-8" method="POST">
                         <input type="hidden" value="1" name="guardar"/>
                         <input type="hidden" value="{Cifrado::encryption($noticia.id)}" name="noticiaId"/>
-                        <textarea class="form-control counted" name="message" placeholder="Digite uma mensagem" rows="5" style="margin-bottom:10px;"></textarea>
+                        <textarea id="textareaComentario" class="form-control counted" name="message" placeholder="Digite uma mensage" rows="5" style="margin-bottom:10px;"></textarea>
                         <h6 class="pull-right" id="counter">320 characters remaining</h6>
                         <button id="addComentario" class="btn btn-info" type="submit">Comentar</button>
                     </form>
@@ -80,9 +80,7 @@
         </div>
     </div>   
 </div>
-                        <div id="ejemplo">
-                            
-                        </div>                        
+                                               
                         
 {/if}
 <!--    ======================================================================= 
@@ -94,36 +92,30 @@
             <div class="panel panel-info">
               <div class="panel-heading">COMENTARIOS</div>
               <div class="panel-body">
-            <ul class="media-list">
-                {foreach item=cmt from=$comentarios}
-                <li class="media">
-                  <div class="media-left">
-                    <a href="#">
-                        <img class="media-object img-circle" width="60" height="60" src="{$_layoutParams.root}public/img/user/thumb/thumb_{$cmt.imagen}" alt="...">
-                    </a>
-                  </div>
-                  <div class="media-body">
-                      <h4 class="media-heading">{$cmt.nick} {if Session::get("id") == $cmt.usuario} <a class="pull-right"><i class="glyphicon glyphicon-trash"></i></a> {/if}</h4>
-                    {$cmt.comentario} 
-                    {*<ul class="media-list">
-                      <li class="media">
-                        <div class="media-left">
-                          <a href="#">
-                            <img class="media-object img-circle" src="http://via.placeholder.com/50x50" alt="...">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                          <h4 class="media-heading">Media heading</h4>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae iste saepe corporis dolorum, molestias quam animi laudantium libero aspernatur voluptatum
-                                        maxime incidunt numquam magni officia commodi unde eveniet inventore atque!50
-                        </div>
-                      </li>
-                    </ul>*}
-                  </div>
-                </li>
-                {/foreach}
-              </ul>  
+                  <ul id="comentarioTexto" class="media-list">
+                        {foreach item=cmt from=$comentarios}
+                        <li class="media">
+                          <div class="media-left">
+                            <a href="#">
+                                <img class="media-object img-circle" width="60" height="60" src="{$_layoutParams.root}public/img/user/thumb/thumb_{$cmt.imagen}" alt="...">
+                            </a>
+                          </div>
+                          <div class="media-body">
+                              <h4 class="media-heading">
+                                  {$cmt.nick} 
+                                  {if Session::get("id") == $cmt.usuario} 
+                                      <a class="eliminarComentario pull-right" attr-noticiaId="{Cifrado::encryption($cmt.noticia)}" attr-comentarioId="{Cifrado::encryption($cmt.id)}">
+                                          <i class="glyphicon glyphicon-trash"></i>
+                                      </a> 
+                                  {/if}
+                              </h4>
+                            {$cmt.comentario} 
+                          </div>
+                        </li>
+                        {/foreach}
+                      </ul>  
+                </div>
+            </div>
         </div>
     </div>
-    
-</div>        
+</div>

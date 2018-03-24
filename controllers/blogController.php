@@ -22,7 +22,7 @@ class blogController extends Controller {
         $title = "";
         $this->_view->setJs(array("prueba"));
         $this->_view->assign("titulo", "Blog");
-        $this->_view->assign("noticia", $paginador->paginar($this->_blog->getBlog($title), $pagina,5));
+        $this->_view->assign("noticia", $paginador->paginar($this->_blog->getBlog($title), $pagina, 5));
         $this->_view->assign("paginacion", $paginador->getView("paginacion_ajax"));
 
         if ($this->getInt("guardar") == 1) {
@@ -37,11 +37,11 @@ class blogController extends Controller {
                 $this->_view->renderizar("index", "blog");
                 exit;
             }
-            
+
             $imagen = "";
 
             if ($_FILES['imagen']['name']) {
-                $ruta = $this->getRutaCarpetaImagen("noticia") ;
+                $ruta = $this->getRutaCarpetaImagen("noticia");
                 $upload = new upload($_FILES['imagen'], 'es_Es');
                 $upload->allowed = array('image/*');
                 $upload->file_new_name_body = 'upl_' . uniqid();
@@ -70,57 +70,75 @@ class blogController extends Controller {
         }
         $this->_view->renderizar("index", "blog");
     }
+
     public function paginacionAjax() {
         $pagina = $this->getInt('pagina');
         $paginador = new Paginador();
         $title = "";
         $this->_view->setJs(array("prueba"));
         $this->_view->assign("titulo", "Blog");
-        $this->_view->assign("noticia", $paginador->paginar($this->_blog->getBlog($title), $pagina,5));
+        $this->_view->assign("noticia", $paginador->paginar($this->_blog->getBlog($title), $pagina, 5));
         $this->_view->assign("paginacion", $paginador->getView("paginacion_ajax"));
-        $this->_view->renderizar("vistaAjax/vista",false, true);
+        $this->_view->renderizar("vistaAjax/vista", false, true);
     }
-    
-    public function noticia($id){
-        
+
+    public function noticia($id) {
+
         $this->_view->setJs(array("prueba"));
-        $id = (int) Cifrado::decryption($id);        
-        if (!is_int($id)){
+        $id = (int) Cifrado::decryption($id);
+        if (!is_int($id)) {
             $this->redireccionar();
         }
         $this->_view->setJs(array("facebook"));
-        $this->_view->assign("noticiarecientes",$this->_blog->getBlog(""));
-        $this->_view->assign("noticia",$this->_blog->getNoticiasBlogById($id));
-        $this->_view->assign("comentarios",$this->_blog->getComentarios($id));
-        
-        $this->_view->renderizar("noticia","blog");
-        
+        $this->_view->assign("noticiarecientes", $this->_blog->getBlog(""));
+        echo $id;
+        $this->_view->assign("noticia", $this->_blog->getNoticiasBlogById($id));
+        $this->_view->assign("comentarios", $this->_blog->getComentarios($id));
+
+        $this->_view->renderizar("noticia", "blog");
     }
-    
-    public function eliminarNoticia($id){
+
+    public function eliminarNoticia($id) {
         $id = Cifrado::decryption($id);
-        $id = (int)$id;
-        if(!is_int($id)){
+        $id = (int) $id;
+        if (!is_int($id)) {
             $this->redireccionar();
         }
         $this->_blog->eliminarNoticia($id);
         $this->redireccionar("blog");
     }
-    
-    public function addComentario(){
+
+    public function addComentario() {
         $this->_view->setJs(array("prueba"));
         $id = Cifrado::decryption($this->getAlphaNum("noticiaId"));
-        $id = (int)$id;
-        if($this->getInt("guardar") == 1){
+        $id = (int) $id;
+        $this->_view->assign("comentarios", $this->_blog->getComentarios($id));
+        if ($this->getInt("guardar") == 1) {
+            if (!$this->getPostParam("message")) {
+                $this->_view->assign("_error", "Ingrese el comentario porfavor");
+                $this->_view->renderizar("vistaAjax/comentarioAjax",false,true);
+                exit;
+            }
             $this->_blog->addComentario(
-                    $this->getPostParam("message"),
-                    $id
-                    );
+                    $this->getPostParam("message"), $id
+            );
+            $this->_view->assign("comentarios", $this->_blog->getComentarios($id));
+            $this->_view->renderizar("vistaAjax/comentarioAjax", false, true);
+            exit;
         }
-        
     }
 
-    public function eliminarComentario($id,$noticia){
-        
+    public function eliminarComentario() {
+        $this->_view->setJs(array("prueba"));
+        $noticiaId = Cifrado::decryption($this->getAlphaNum("noticiaId"));
+        $comentarioId = Cifrado::decryption($this->getAlphaNum("comentarioId"));
+        $noticiaId = (int) $noticiaId;
+        $comentarioId = (int) $comentarioId;
+        $this->_blog->eliminarComentario($comentarioId);
+        $this->_view->assign("comentarios", $this->_blog->getComentarios($noticiaId));
+        $this->_view->assign("noticia", $this->_blog->getNoticiasBlogById($noticiaId));
+        $this->_view->renderizar("vistaAjax/comentarioAjax", false, true);
+        exit;
     }
+
 }
